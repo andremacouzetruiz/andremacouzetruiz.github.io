@@ -142,7 +142,8 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,58px);line-
 .frame-body.on .skeleton{opacity:0;transition:opacity .5s .35s}
 
 /* ---------- GRID DE REPOS ---------- */
-.repos{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.repos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:700px){.repos{grid-template-columns:1fr}}
 .repo{background:var(--bone);padding:28px 26px 30px;text-decoration:none;display:flex;flex-direction:column;transition:.24s}
 .repo:hover{background:var(--accent-soft)}
 .repo h3{font-family:var(--serif);font-size:25px;font-weight:400;margin:0 0 7px;line-height:1.14}
