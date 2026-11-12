@@ -1,216 +1,219 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>André Macouzet Ruiz — Data Scientist &amp; Founder</title>
-<meta name="description" content="Data Scientist y founder en Morelia, México. Convierto datos en productos desplegados: PARFECT, NorthPoint, ABONO, FIRMLINE. Python · SQL · Machine Learning.">
-<meta name="author" content="André Macouzet Ruiz">
-<link rel="canonical" href="https://andremacouzetruiz.github.io/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>André Macouzet Ruiz</title>
+<meta name="description" content="Data scientist and builder. Co-founder at Northpoint, founder of Studio AMR. What I build, what I have learned, and how to reach me.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="André Macouzet Ruiz — Data Scientist &amp; Founder">
-<meta property="og:description" content="Convierto datos en productos que la gente usa. 26 productos en vivo. Python · SQL · Machine Learning.">
 <meta property="og:url" content="https://andremacouzetruiz.github.io/">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="André Macouzet Ruiz">
+<meta property="og:description" content="Who I am, what I build and what I am learning along the way.">
 <meta property="og:image" content="https://andremacouzetruiz.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="André Macouzet Ruiz — Convierto datos en productos que la gente usa.">
-<meta property="og:site_name" content="André Macouzet Ruiz">
-<meta property="og:locale" content="es_MX">
-<meta name="twitter:image" content="https://andremacouzetruiz.github.io/og.png">
-<meta name="twitter:title" content="André Macouzet Ruiz — Data Scientist &amp; Founder">
-<meta name="twitter:description" content="Convierto datos en productos que la gente usa. 26 productos en vivo.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23141210'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='62' fill='%23F2EDE4' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Cpath d='M32 8 35 29 56 32 35 35 32 56 29 35 8 32 29 29Z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--fg:#f2f2f2;--dim:#9a9a9a;--faint:#5c5c5c;--line:#1f1f1f;--serif:"Newsreader",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+nav{position:sticky;top:0;z-index:5;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .brand{display:flex;align-items:center;gap:10px;font-size:17px}
+nav .links{display:flex;gap:26px}
+nav .links a{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);transition:color .2s}
+nav .links a:hover{color:var(--fg)}
+.star{width:14px;height:14px;flex:none}
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-top:110px;padding-bottom:110px}
+.hero h1{font-weight:300;font-size:clamp(46px,7vw,86px);line-height:1;letter-spacing:-.02em;margin:18px 0 26px}
+.hero h1 em{font-style:italic}
+.hero p.lead{font-size:22px;color:#d6d6d6;max-width:30ch}
+.hero .cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;border:1px solid var(--fg);transition:background .2s,color .2s}
+.btn.solid{background:var(--fg);color:#000}
+.btn:hover{background:var(--fg);color:#000}
+.portrait{aspect-ratio:4/5;width:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);border:1px solid var(--line)}
+/* sections */
+section{border-bottom:1px solid var(--line);padding:96px 0}
+.head{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-bottom:48px}
+.head h2{font-weight:300;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-.01em}
+.head h2 em{font-style:italic}
+.body{display:grid;grid-template-columns:200px 1fr;gap:40px}
+.prose p{max-width:62ch;margin-bottom:20px;color:#d9d9d9}
+.prose p:first-child{font-size:24px;color:var(--fg);line-height:1.45}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:#000;padding:32px;display:flex;flex-direction:column;gap:12px;min-height:230px;transition:background .25s}
+.card:hover{background:#0b0b0b}
+.card h3{font-weight:400;font-size:28px}
+.card p{color:#bdbdbd;font-size:17px;flex:1}
+.card .go{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.card:hover .go{color:var(--fg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.stat{padding:28px 20px 0 0}
+.stat b{display:block;font-weight:300;font-size:46px;line-height:1;margin-bottom:10px}
+.stat span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.list{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.row h4{font-weight:400;font-size:21px}
+.row p{color:#c4c4c4;font-size:17px}
+.contact{text-align:left}
+.contact h2{font-weight:300;font-size:clamp(40px,6vw,72px);line-height:1.05;letter-spacing:-.02em;margin:16px 0 30px}
+.contact h2 em{font-style:italic}
+footer{padding:34px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:860px){
+  body{font-size:17px}
+  nav .links{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:64px;gap:36px}
+  .portrait{max-width:300px}
+  .head,.body,.row{grid-template-columns:1fr;gap:12px}
+  .cards{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:64px 0}
+  .wrap{padding:0 16px}
+}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute"><symbol id="s" viewBox="0 0 64 64"><path d="M32 2 35.5 28.5 62 32 35.5 35.5 32 62 28.5 35.5 2 32 28.5 28.5Z" fill="currentColor"/></symbol></svg>
 
-<nav class="nav">
-  <div class="nav-in">
-    <a class="brand" href="#top">André Macouzet Ruiz</a>
-    <div class="nav-links">
-      <a href="#trabajo"><span data-es>Trabajo</span><span data-en>Work</span></a>
-      <a href="#datos"><span data-es>Datos</span><span data-en>Data</span></a>
-      <a href="#trading">Trading</a>
-      <a href="#credenciales"><span data-es>Credenciales</span><span data-en>Credentials</span></a>
-      <a class="na-cta" href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a>
-      <button class="lang" id="lang" type="button">EN</button>
-    </div>
-  </div>
-</nav>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><svg class="star"><use href="#s"/></svg>André Macouzet</a>
+  <div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#proof">Proof</a><a href="#learning">Learning</a><a href="#contact">Contact</a></div>
+</div></nav>
 
 <header class="hero" id="top">
+  <canvas id="sky" aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="eyebrow">
-      <span class="dot"></span>
-      <span data-es>Morelia, México</span><span data-en>Morelia, Mexico</span>
-      <span>·</span>
-      <span data-es>Data Scientist &amp; founder</span><span data-en>Data scientist &amp; founder</span>
-      <span>·</span>
-      <span data-es>Trader de futuros</span><span data-en>Futures trader</span>
-    </p>
-    <h1>
-      <span data-es>Convierto datos en <em>productos</em> que la gente usa.</span>
-      <span data-en>I turn data into <em>products</em> people use.</span>
-    </h1>
-    <p class="lede">
-      <span data-es>Un modelo en una laptop no cambia nada. Por eso construyo hasta que el producto está desplegado y alguien lo abre. <strong>26 de ellos están en vivo ahora mismo</strong> — analítica de golf, software de invernadero, plataformas de trading, tiendas, juegos. Python, SQL y machine learning aplicados a problemas con dinero real de por medio.</span>
-      <span data-en>A model on a laptop changes nothing. So I build until the product is deployed and someone opens it. <strong>26 of them are live right now</strong> — golf analytics, greenhouse software, trading platforms, storefronts, games. Python, SQL and machine learning applied to problems with real money on the line.</span>
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-solid" href="#trabajo"><span data-es>Ver el trabajo</span><span data-en>See the work</span> ↓</a>
-      <a class="btn btn-ghost" href="mailto:andremacouzetruiz@gmail.com">Email</a>
-      <a class="btn btn-ghost" href="https://github.com/andremacouzetruiz" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/andremacouzet/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <div class="reveal">
+      <div class="mono">Data scientist · Builder · Morelia, México</div>
+      <h1>I turn data into <em>products.</em></h1>
+      <p class="lead">Co-founder at Northpoint. Founder of Studio AMR. I build until the thing is deployed and someone opens it.</p>
+      <div class="cta">
+        <a class="btn solid" href="#work">See what I build</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
     </div>
+    <img class="portrait reveal" src="img/andre.jpg" alt="Portrait of André Macouzet Ruiz" width="720" height="720">
   </div>
 </header>
 
-<div class="stats-wrap">
-  <div class="stats">
-    <div class="stat"><b>26</b><span data-es>Productos desplegados y en vivo</span><span data-en>Products deployed and live</span></div>
-    <div class="stat"><b>15</b><span data-es>Proyectos de datos end&#8209;to&#8209;end — TripleTen</span><span data-en>End&#8209;to&#8209;end data projects — TripleTen</span></div>
-    <div class="stat"><b>$11,477</b><span data-es>USD retirados en payouts de prop firms</span><span data-en>USD withdrawn in prop&#8209;firm payouts</span></div>
-    <div class="stat"><b>C1</b><span data-es>Inglés — Duolingo English Test</span><span data-en>English — Duolingo English Test</span></div>
+<section id="about"><div class="wrap">
+  <div class="head reveal"><div class="mono">01 · About</div><h2>Measure first, <em>believe second.</em></h2></div>
+  <div class="body reveal"><div></div><div class="prose">
+    <p>I built the backtest that proved my own trading strategy lost money. Then I changed the strategy.</p>
+    <p>That is the whole method. A model on a laptop changes nothing, so I take an idea from raw data to a deployed product, and then I measure whether it worked. When the number is uncomfortable, I keep the number.</p>
+    <p>I started my first business at twelve and ran retail and distribution in Mexico City until 2021. Today I build software: trading tools at Northpoint, landing pages and apps at Studio AMR, and products of my own.</p>
+  </div></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="head reveal"><div class="mono">02 · Work</div><h2>What I am <em>building.</em></h2></div>
+  <div class="cards reveal">
+    <a class="card" href="https://northpointcapital.io/" target="_blank" rel="noopener">
+      <div class="mono">Co-founder</div><h3>Northpoint</h3>
+      <p>Trading psychology, behavioral finance and technology. A trade journal, risk management and education for futures traders. Better traders, better decisions.</p>
+      <span class="go">northpointcapital.io →</span>
+    </a>
+    <a class="card" href="https://studioamr.github.io/" target="_blank" rel="noopener">
+      <div class="mono">Founder</div><h3>Studio AMR</h3>
+      <p>A studio that designs and builds landing pages and apps. Clear process first, then the build, then the numbers.</p>
+      <span class="go">studioamr.github.io →</span>
+    </a>
+    <a class="card" href="https://studioamr.github.io/agrofin/" target="_blank" rel="noopener">
+      <div class="mono">Product</div><h3>ABONO</h3>
+      <p>Greenhouse software that answers the one question the grower could not: did this cycle make money? In use by a real grower.</p>
+      <span class="go">Open the app →</span>
+    </a>
+    <a class="card" href="https://studioamr.github.io/parfect/" target="_blank" rel="noopener">
+      <div class="mono">Product</div><h3>PARFECT</h3>
+      <p>Golf analytics that finds the specific shot costing a player the most strokes per round, instead of an average that tells you nothing.</p>
+      <span class="go">Open the app →</span>
+    </a>
   </div>
-</div>
+</div></section>
 
-<!-- ============ TRABAJO ============ -->
-<section id="trabajo">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">01</span>
-      <h2><span data-es>Trabajo seleccionado</span><span data-en>Selected work</span></h2>
-      <p class="sec-note"><span data-es>Cada preview es el sitio real, cargando en vivo. Todos abren hoy.</span><span data-en>Every preview is the real site, loading live. All of them open today.</span></p>
-    </div>
-
-    <div class="work" id="work"></div>
-
-    <div class="cta-row rv" style="margin-top:clamp(40px,6vh,68px)">
-      <a class="btn btn-ghost" href="https://studioamr.github.io/portafolio/" target="_blank" rel="noopener"><span data-es>Ver el catálogo completo</span><span data-en>See the full catalogue</span> ↗</a>
-    </div>
+<section id="proof"><div class="wrap">
+  <div class="head reveal"><div class="mono">03 · Proof</div><h2>Numbers I can <em>defend.</em></h2></div>
+  <div class="stats reveal">
+    <div class="stat"><b>26</b><span>Products shipped and live</span></div>
+    <div class="stat"><b>$11,477</b><span>USD withdrawn in trading payouts</span></div>
+    <div class="stat"><b>15</b><span>End-to-end data science projects</span></div>
+    <div class="stat"><b>12</b><span>Age I started my first business</span></div>
   </div>
-</section>
-
-<!-- ============ DATOS ============ -->
-<section id="datos" style="background:var(--bone-2)">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">02</span>
-      <h2><span data-es>Ciencia de datos</span><span data-en>Data science</span></h2>
-      <p class="sec-note"><span data-es>Código abierto. Notebooks, backtests y dashboards.</span><span data-en>Open code. Notebooks, backtests and dashboards.</span></p>
-    </div>
-
-    <div class="split rv" style="margin-bottom:clamp(34px,5vh,54px)">
-      <p class="pull"><span data-es>Certificado <em>Data Scientist</em> por TripleTen: 15 proyectos end&#8209;to&#8209;end.</span><span data-en>TripleTen <em>Data Scientist</em> certificate: 15 end&#8209;to&#8209;end projects.</span></p>
-      <div class="prose">
-        <p><span data-es>El programa cubrió análisis exploratorio, modelado predictivo, clasificación y regresión, series de tiempo, procesamiento de lenguaje natural con BERT y visión artificial — cada uno entregado como un proyecto completo con datos reales, no como un ejercicio de clase.</span><span data-en>The program covered exploratory analysis, predictive modeling, classification and regression, time series, natural language processing with BERT, and computer vision — each delivered as a complete project on real data, not a classroom exercise.</span></p>
-        <p><span data-es><strong>Stack:</strong> Python (Pandas, NumPy, scikit&#8209;learn, Plotly, Streamlit), SQL (PostgreSQL, MySQL), R, Power BI, Tableau.</span><span data-en><strong>Stack:</strong> Python (Pandas, NumPy, scikit&#8209;learn, Plotly, Streamlit), SQL (PostgreSQL, MySQL), R, Power BI, Tableau.</span></p>
-      </div>
-    </div>
-
-    <div class="repos rv" id="repos"></div>
+  <div class="list reveal" style="margin-top:56px">
+    <div class="row"><h4>Data Scientist</h4><p>Professional Certificate, TripleTen. Exploratory analysis, machine learning, time series, NLP and computer vision in Python and SQL.</p></div>
+    <div class="row"><h4>Futures trader</h4><p>Nasdaq futures on prop-firm capital. My own backtester, journal and risk-control software, with written rules I can audit.</p></div>
+    <div class="row"><h4>Languages</h4><p>Spanish, native. English, C1 (Duolingo English Test).</p></div>
   </div>
-</section>
+</div></section>
 
-<!-- ============ TRADING ============ -->
-<section id="trading">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">03</span>
-      <h2>Trading</h2>
-      <p class="sec-note"><span data-es>Futuros del Nasdaq con capital de prop firms, 2025 – hoy.</span><span data-en>Nasdaq futures on prop-firm capital, 2025 – today.</span></p>
-    </div>
-    <div class="split rv">
-      <p class="pull"><span data-es>Construí el backtest que me demostró que mi propia estrategia tenía <em>expectativa negativa</em>.</span><span data-en>I built the backtest that proved my own strategy had <em>negative expectancy</em>.</span></p>
-      <div class="prose">
-        <p><span data-es>Opero futuros del Nasdaq (MNQ/NQ) con cuentas fondeadas por prop firms — Apex Trader Funding y Tradeify. A lo largo de unas 35 cuentas de evaluación he <strong>retirado $11,477 USD en payouts reales</strong>. Es el examen que no le importa tu currículum.</span><span data-en>I trade Nasdaq futures (MNQ/NQ) on prop-firm funded accounts — Apex Trader Funding and Tradeify. Across roughly 35 evaluation accounts I have <strong>withdrawn $11,477 USD in real payouts</strong>. It is the exam that does not care about your résumé.</span></p>
-        <p><span data-es>Lo que me interesa de aquí no es el dinero, es la medición. Programé mis propias herramientas de backtesting y bitácora para calcular profit factor, drawdown y expectancy sobre mis fills reales — y la primera conclusión honesta fue que el edge discrecional no sobrevivía a la prueba. Ese resultado es el que dirige el trabajo actual: convertir una ventaja discrecional en una sistemática y auditable.</span><span data-en>What interests me here is not the money, it is the measurement. I wrote my own backtesting and journaling tools to compute profit factor, drawdown and expectancy over my real fills — and the first honest conclusion was that the discretionary edge did not survive the test. That result is what drives the current work: turning a discretionary edge into a systematic, auditable one.</span></p>
-        <p><span data-es>También construí el software de control de riesgo que me impone reglas duras de sesión: una operación por sesión y cierre forzado después de una pérdida.</span><span data-en>I also built the risk-control software that enforces hard session rules on me: one trade per session, forced shutdown after a loss.</span></p>
-      </div>
-    </div>
+<section id="learning"><div class="wrap">
+  <div class="head reveal"><div class="mono">04 · Learning</div><h2>What I am <em>learning.</em></h2></div>
+  <div class="list reveal">
+    <div class="row"><h4>Psychoanalysis</h4><p>Why people, me included, act against their own rules. It is the same question I study in trading, from the other side.</p></div>
+    <div class="row"><h4>Behavioral finance</h4><p>How fear, overconfidence and the need to be right show up in a trade log, and how to design rules that hold anyway.</p></div>
+    <div class="row"><h4>Golf and endurance</h4><p>Golf every week and training toward an Ironman. Both reward the same thing: a plan you follow when it stops being fun.</p></div>
+    <div class="row"><h4>Electronic music</h4><p>Producing in Ableton, and writing code to measure a mix instead of guessing.</p></div>
   </div>
-</section>
+</div></section>
 
-<!-- ============ ANTES ============ -->
-<section id="antes" style="background:var(--bone-2)">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">04</span>
-      <h2><span data-es>Antes del código</span><span data-en>Before the code</span></h2>
-      <p class="sec-note"><span data-es>Negocios reales, 2014 – 2021.</span><span data-en>Real businesses, 2014 – 2021.</span></p>
-    </div>
-    <div class="split rv">
-      <p class="pull"><span data-es>Viví solo en Ciudad de México tres años, <em>operando mi propio negocio</em>.</span><span data-en>I lived alone in Mexico City for three years, <em>running my own business</em>.</span></p>
-      <div class="prose">
-        <p><span data-es>Negociación y venta de maquillaje en el Centro: proveedores, inventario y el manejo de mi propio capital. De ahí salieron acuerdos con retail nacional — incluido <strong>Waldos</strong>, tras presentar producto en la expo <strong>ANTAD</strong> — y redes de distribución de maquillaje y cajas de empaque con clientes internacionales.</span><span data-en>Buying and selling cosmetics in downtown Mexico City: suppliers, inventory and managing my own capital. That led to national retail deals — including <strong>Waldos</strong>, after pitching at the <strong>ANTAD</strong> expo — plus distribution networks for cosmetics and packaging boxes with international clients.</span></p>
-        <p><span data-es>También lideré el desarrollo de un <strong>CRM a la medida</strong> para centralizar los datos de venta de varias empresas, y operé un punto de venta de Oculus Quest. El primer negocio fue a los doce años: una máquina expendedora de pelotas en el salón de fiestas de mis papás, pagada con mis ahorros.</span><span data-en>I also led development of a <strong>custom CRM</strong> to centralize sales data across several companies, and ran an Oculus Quest point of sale. The first business came at twelve: a bouncy-ball vending machine in my parents' event hall, paid for out of my own savings.</span></p>
-      </div>
-    </div>
+<section id="contact" class="contact"><div class="wrap reveal">
+  <div class="mono">05 · Contact</div>
+  <h2>Building something with data? <em>Let's talk.</em></h2>
+  <div class="cta" style="display:flex;gap:14px;flex-wrap:wrap">
+    <a class="btn solid" href="mailto:andremacouzetruiz@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/andremacouzet" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/andremacouzetruiz" target="_blank" rel="noopener">GitHub</a>
   </div>
-</section>
+</div></section>
 
-<!-- ============ CREDENCIALES ============ -->
-<section id="credenciales">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">05</span>
-      <h2><span data-es>Credenciales</span><span data-en>Credentials</span></h2>
-      <p class="sec-note"><span data-es>Solo lo que puedo comprobar.</span><span data-en>Only what I can prove.</span></p>
-    </div>
-    <ul class="facts rv">
-      <li>
-        <span class="l"><b>Data Scientist Professional Certificate</b><span data-es>TripleTen — graduado. 15 proyectos end&#8209;to&#8209;end.</span><span data-en>TripleTen — graduated. 15 end&#8209;to&#8209;end projects.</span></span>
-        <span class="r">2025 – 2026</span>
-      </li>
-      <li>
-        <span class="l"><b>Duolingo English Test — C1</b><span data-es>Inglés, competencia profesional completa.</span><span data-en>English, full professional proficiency.</span></span>
-        <span class="r">Duolingo</span>
-      </li>
-      <li>
-        <span class="l"><b><span data-es>Preparatoria</span><span data-en>High school diploma</span></b><span data-es>Tecnológico de Monterrey, Campus Morelia — beca deportiva de fútbol.</span><span data-en>Tecnológico de Monterrey, Campus Morelia — football athletic scholarship.</span></span>
-        <span class="r">2018 – 2021</span>
-      </li>
-      <li>
-        <span class="l"><b><span data-es>Contabilidad</span><span data-en>Accounting</span></b><span data-es>Escuela Bancaria y Comercial.</span><span data-en>Escuela Bancaria y Comercial.</span></span>
-        <span class="r"><span data-es>En curso</span><span data-en>In progress</span></span>
-      </li>
-      <li>
-        <span class="l"><b><span data-es>Idiomas</span><span data-en>Languages</span></b><span data-es>Español nativo · Inglés C1.</span><span data-en>Native Spanish · English C1.</span></span>
-        <span class="r">ES / EN</span>
-      </li>
-    </ul>
-  </div>
-</section>
+<footer><div class="wrap">
+  <span class="mono">© 2026 André Macouzet Ruiz</span>
+  <span class="mono">Not financial advice. What I share is educational.</span>
+</div></footer>
 
-<!-- ============ CONTACTO ============ -->
-<section class="contact" id="contacto">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">06</span>
-      <h2><span data-es>Hablemos</span><span data-en>Let's talk</span></h2>
-    </div>
-    <p class="lede rv"><span data-es>¿Construyes algo en fintech, datos, o quieres convertir un dataset en algo que la gente abra? Escríbeme.</span><span data-en>Building something in fintech, data, or want to turn a dataset into something people actually open? Write to me.</span></p>
-    <a class="big-mail rv" href="mailto:andremacouzetruiz@gmail.com">andremacouzetruiz@gmail.com</a>
-    <div class="soc rv">
-      <a href="https://www.linkedin.com/in/andremacouzet/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a href="https://github.com/andremacouzetruiz" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="https://studioamr.github.io/portafolio/" target="_blank" rel="noopener"><span data-es>Catálogo</span><span data-en>Catalogue</span> ↗</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="foot-in">
-    <span>© 2026 André Macouzet Ruiz</span>
-    <span>Morelia, México</span>
-  </div>
-</footer>
-
-<script src="js/app.js?v=1"></script>
+<script>
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// star trails around a pole
+(()=>{
+  const c=document.getElementById('sky'),x=c.getContext('2d');
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,cx,cy,stars=[];
+  function size(){
+    const d=Math.min(devicePixelRatio||1,2);
+    W=c.clientWidth;H=c.clientHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    cx=W*.78;cy=H*.42;
+    const R=Math.hypot(W,H);
+    stars=Array.from({length:260},()=>({r:Math.sqrt(Math.random())*R,a:Math.random()*Math.PI*2,len:.25+Math.random()*.5,w:Math.random()<.85?.6:1.2,o:.15+Math.random()*.55}));
+  }
+  function draw(t){
+    x.clearRect(0,0,W,H);
+    const rot=t*0.00002;
+    for(const s of stars){
+      x.beginPath();x.strokeStyle=`rgba(255,255,255,${s.o})`;x.lineWidth=s.w;
+      x.arc(cx,cy,s.r,s.a+rot,s.a+rot+s.len);x.stroke();
+    }
+    if(!still)requestAnimationFrame(draw);
+  }
+  size();addEventListener('resize',size);requestAnimationFrame(draw);
+})();
+</script>
 </body>
 </html>
