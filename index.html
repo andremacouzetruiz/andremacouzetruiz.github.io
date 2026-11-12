@@ -34,7 +34,7 @@ nav a:hover{opacity:.6}
 .intro h1{font-weight:400;font-size:clamp(64px,8.4vw,128px);line-height:.92;letter-spacing:.035em;text-transform:uppercase}
 .intro p{font-family:var(--gara);font-size:20px;line-height:1.45;margin-top:38px;max-width:300px}
 .intro p a{text-decoration:underline;text-underline-offset:4px}
-.telemetry{position:absolute;left:100px;right:56px;bottom:118px;z-index:2;display:flex;align-items:flex-start;gap:44px}
+.telemetry{position:absolute;left:100px;right:56px;bottom:150px;z-index:2;display:flex;align-items:flex-start;gap:44px}
 .controls{display:flex;gap:10px}
 .controls button{background:none;border:1px solid var(--line);color:var(--fg);font:10px var(--futura);letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:border-color .2s}
 .controls button:hover,.controls button.on{border-color:var(--fg)}
@@ -42,6 +42,11 @@ dl{display:grid;grid-template-columns:repeat(5,minmax(90px,auto));gap:6px 44px}
 dt{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 dd{font-size:12px;margin-bottom:10px;font-variant-numeric:tabular-nums}
 .pos{grid-column:1/-1;display:flex;gap:18px;font-size:10px}
+/* timeline */
+.timeline{position:absolute;left:100px;right:56px;bottom:100px;z-index:2;display:flex;gap:4px}
+.timeline button{flex:1;background:none;border:0;border-top:1px solid var(--line);color:var(--dim);font:8px var(--futura);letter-spacing:.12em;text-transform:uppercase;padding:8px 0 0;text-align:left;cursor:pointer;position:relative;transition:color .3s}
+.timeline button::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:var(--p,0%);background:var(--fg)}
+.timeline button.on,.timeline button:hover{color:var(--fg)}
 .pos span{color:var(--dim);letter-spacing:.14em;text-transform:uppercase;font-size:8px;align-self:center}
 .latest{position:absolute;left:56px;right:56px;bottom:0;z-index:2;display:grid;grid-template-columns:200px 1fr 60px;align-items:center;padding:30px 0 34px;border-top:1px solid var(--line)}
 .latest .meta{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);line-height:1.8;padding-left:44px}
@@ -68,6 +73,8 @@ footer{max-width:780px;margin:0 auto;padding:26px 36px 34px;display:flex;justify
 footer a{margin-left:16px}
 footer a:hover{color:var(--fg)}
 @media(max-width:860px){
+  .timeline{left:22px;right:22px;bottom:96px}.timeline button{font-size:0}
+  .telemetry{bottom:140px}
   header{padding:22px}
   .intro{left:22px;right:22px;top:auto;bottom:300px}
   .intro h1{font-size:64px}
@@ -91,23 +98,23 @@ footer a:hover{color:var(--fg)}
   <canvas id="gl" aria-hidden="true"></canvas>
   <div class="intro">
     <h1>André<br>Macouzet</h1>
-    <p>Founder of <a href="https://northpointcapital.io/" target="_blank" rel="noopener">Northpoint</a> and <a href="https://studioamr.github.io/" target="_blank" rel="noopener">Studio AMR</a>. Technology, cities, the mind, and the future of civilization.</p>
+    <p>Founder of <a href="https://northpointcapital.io/" target="_blank" rel="noopener">Northpoint</a> and <a href="https://studioamr.github.io/" target="_blank" rel="noopener">Studio AMR</a>. Technology, cities, the mind, and the future of civilization. From the first fire to other worlds.</p>
   </div>
   <div class="telemetry">
     <div class="controls"><button id="pause" type="button">Pause</button></div>
     <dl>
-      <div><dt>World</dt><dd id="world">Earth</dd></div>
-      <div><dt>Speed · sim</dt><dd id="speed">0 km/s</dd></div>
-      <div><dt>Mean surface</dt><dd id="temp">15 °C</dd></div>
-      <div><dt>Day</dt><dd id="day">24h 0m</dd></div>
-      <div><dt>Year · solar</dt><dd id="year">365 Earth d</dd></div>
-      <div class="pos"><span>Position · sim km</span><b id="pos" style="font-weight:400">X 0.0 · Y 0.0 · Z 0.0</b></div>
+      <div><dt>Era</dt><dd id="era">Primates</dd></div>
+      <div><dt>Year</dt><dd id="yr">−300,000</dd></div>
+      <div><dt>Humans</dt><dd id="pop">~10,000</dd></div>
+      <div><dt>Energy</dt><dd id="nrg">Muscle</dd></div>
+      <div><dt>Frontier</dt><dd id="fr">The savanna</dd></div>
+      <div class="pos"><span>Chapter</span><b id="cap" style="font-weight:400">The spark</b></div>
     </dl>
-    <div class="controls" style="margin-left:auto"><button class="w on" data-w="0" type="button">Earth</button><button class="w" data-w="1" type="button">Moon</button><button class="w" data-w="2" type="button">Mars</button></div>
   </div>
-  <a class="latest" href="/cities-are-technology/">
+  <div class="timeline" id="tl"></div>
+  <a class="latest" href="/a-city-with-a-soul/">
     <div class="meta">Latest essay<br>November 12, 2026</div>
-    <h2>Cities Are Technology</h2>
+    <h2>A City With a Soul</h2>
     <span class="arrow">↗</span>
   </a>
 </section>
@@ -135,62 +142,6 @@ footer a:hover{color:var(--fg)}
 <footer><span>© 2026 André Macouzet</span><span><a href="/posts.atom">RSS</a><a href="https://northpointcapital.io/" target="_blank" rel="noopener">Northpoint ↗</a><a href="https://studioamr.github.io/" target="_blank" rel="noopener">Studio AMR ↗</a></span></footer>
 
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
-<script type="module">
-import * as THREE from 'three';
-const cv=document.getElementById('gl');
-const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
-const S=new THREE.Scene();const C=new THREE.PerspectiveCamera(40,1,.1,200);C.position.set(0,0,18);
-const ink=0xe9e5dc;
-const WORLDS=[
- {name:'Earth',temp:'15 °C',day:'23h 56m',year:'365 Earth d',r:2.1,v:29.8},
- {name:'Moon',temp:'−20 °C',day:'27d 7h',year:'27.3 Earth d',r:1.2,v:1.0},
- {name:'Mars',temp:'−65 °C',day:'24h 37m',year:'687 Earth d',r:1.6,v:24.1}];
-// planet: wireframe lat/long sphere + faint shaded core
-const planet=new THREE.Group();S.add(planet);
-function buildPlanet(r){
-  planet.clear();
-  const core=new THREE.Mesh(new THREE.SphereGeometry(r*.995,48,48),new THREE.MeshBasicMaterial({color:0x000000}));planet.add(core);
-  const m=new THREE.LineBasicMaterial({color:ink,transparent:true,opacity:.55});
-  for(let i=1;i<12;i++){const lat=-Math.PI/2+i*Math.PI/12,y=Math.sin(lat)*r,rr=Math.cos(lat)*r,pts=[];for(let k=0;k<=96;k++){const a=k/96*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(a)*rr,y,Math.sin(a)*rr))}planet.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),m))}
-  for(let j=0;j<16;j++){const a=j/16*Math.PI*2,pts=[];for(let k=0;k<=64;k++){const lat=-Math.PI/2+k/64*Math.PI;pts.push(new THREE.Vector3(Math.cos(lat)*Math.cos(a)*r,Math.sin(lat)*r,Math.cos(lat)*Math.sin(a)*r))}planet.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),m))}
-  const halo=new THREE.Mesh(new THREE.SphereGeometry(r*1.05,48,48),new THREE.MeshBasicMaterial({color:ink,transparent:true,opacity:.04,side:THREE.BackSide}));planet.add(halo);
-}
-planet.position.set(4.6,3.2,0);
-// ship: lathe hull + swept wings, drawn as wireframe over black
-const ship=new THREE.Group();S.add(ship);
-const fill=new THREE.MeshBasicMaterial({color:0x050505});
-const wire=new THREE.LineBasicMaterial({color:ink,transparent:true,opacity:.75});
-function wf(geo){const g=new THREE.Group();g.add(new THREE.Mesh(geo,fill));g.add(new THREE.LineSegments(new THREE.WireframeGeometry(geo),wire));return g}
-const prof=[[0,.55],[.5,.52],[.9,.38],[1.2,.18],[1.3,0],[1.2,-.12],[.8,-.22],[0,-.26]].map(([x,y])=>new THREE.Vector2(x,y));
-const hull=wf(new THREE.LatheGeometry(prof,24));ship.add(hull);
-const wingShape=new THREE.Shape();wingShape.moveTo(.6,0);wingShape.lineTo(4.3,-.15);wingShape.lineTo(4.4,0);wingShape.lineTo(1.1,.5);wingShape.lineTo(.6,.3);
-const wingGeo=new THREE.ExtrudeGeometry(wingShape,{depth:.08,bevelEnabled:false});
-const wL=wf(wingGeo);wL.rotation.x=-Math.PI/2;wL.position.set(0,0,.04);ship.add(wL);
-const wR=wf(wingGeo);wR.rotation.x=-Math.PI/2;wR.scale.x=-1;wR.position.set(0,0,.04);ship.add(wR);
-const glow=new THREE.MeshBasicMaterial({color:0x9fd2ff});
-[-.75,.75].forEach(x=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.12,16,16),glow);e.position.set(x,-.18,.9);ship.add(e)});
-ship.position.set(4.6,-1.4,2);ship.rotation.x=.18;ship.scale.setScalar(.9);
-// stars
-const sg=new THREE.BufferGeometry(),sp=[];for(let i=0;i<900;i++)sp.push((Math.random()-.5)*120,(Math.random()-.5)*70,-20-Math.random()*40);
-sg.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));S.add(new THREE.Points(sg,new THREE.PointsMaterial({color:ink,size:.08,transparent:true,opacity:.6})));
-function size(){const w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();const m=w<860;planet.position.set(m?1.6:4.6,m?5:3.2,0);ship.position.x=m?0:4.6;ship.position.y=m?2.2:-1.4}
-addEventListener('resize',size);
-let wi=0,paused=false,t=0,mx=0,my=0;
-const $=id=>document.getElementById(id);
-function setWorld(i){wi=i;const w=WORLDS[i];buildPlanet(w.r);$('world').textContent=w.name;$('temp').textContent=w.temp;$('day').textContent=w.day;$('year').textContent=w.year;document.querySelectorAll('.w').forEach(b=>b.classList.toggle('on',+b.dataset.w===i))}
-document.querySelectorAll('.w').forEach(b=>b.onclick=()=>setWorld(+b.dataset.w));
-$('pause').onclick=()=>{paused=!paused;$('pause').textContent=paused?'Play':'Pause'};
-addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
-setWorld(0);size();
-let last=performance.now();
-(function f(now){const dt=(now-last)/1000;last=now;if(!paused)t+=dt;
-  planet.rotation.y=t*.18;planet.rotation.z=.4;
-  ship.position.y+=( (innerWidth<860?2.2:-1.4)+Math.sin(t*1.2)*.18-ship.position.y)*.05;
-  ship.rotation.z=Math.sin(t*.9)*.05+mx*-.25;ship.rotation.x=.18+my*.2;ship.rotation.y=mx*.3;
-  C.position.x+=(mx*1.2-C.position.x)*.03;C.position.y+=(-my*.8-C.position.y)*.03;C.lookAt(2,0,0);
-  if(!paused){const w=WORLDS[wi],v=w.v*(1+Math.sin(t*.7)*.04);$('speed').textContent=v.toLocaleString('en-US',{maximumFractionDigits:1,minimumFractionDigits:1})+' km/s';
-    $('pos').textContent=`X ${(Math.sin(t*.1)*120).toFixed(1)} · Y ${(3600+Math.cos(t*.13)*80).toFixed(1)} · Z ${(59000+t*v*.02).toFixed(1)}`}
-  R.render(S,C);requestAnimationFrame(f)})(last);
-</script>
+<script type="module" src="/evolution.js"></script>
 </body>
 </html>
