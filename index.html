@@ -3,241 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>André Macouzet Ruiz · The future</title>
-<meta name="description" content="My vision of the future: cities built for humans, machines that think with us, minds we finally understand.">
+<title>André Macouzet</title>
+<meta name="description" content="André Macouzet. Founder of Northpoint and Studio AMR. Technology, cities, the mind, and the future of civilization.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://andremacouzetruiz.github.io/">
-<meta property="og:title" content="André Macouzet Ruiz · The future is built">
-<meta property="og:description" content="My vision of the future, from cities to the human mind.">
-<meta property="og:image" content="https://andremacouzetruiz.github.io/og-v3.png">
+<meta property="og:title" content="André Macouzet">
+<meta property="og:description" content="Technology, cities, the mind, and the future of civilization.">
+<meta property="og:image" content="https://andremacouzetruiz.github.io/og-v4.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%233c7fd0'/%3E%3Cpath d='M32 8 35 29 56 32 35 35 32 56 29 35 8 32 29 29Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="alternate" type="application/atom+xml" href="/posts.atom">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e9e5dc' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#efe7d8;--ink:#141210;--red:#c4161c;--sky1:#2f74c6;--sky2:#9cc9f2;--hand:"Caveat",cursive;--serif:"Instrument Serif",Georgia,serif;--sans:"Inter Tight",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace}
+:root{--bg:#000;--fg:#e9e5dc;--dim:#8b877e;--line:rgba(233,229,220,.16);--futura:"Jost",Futura,"Helvetica Neue",Arial,sans-serif;--gara:"EB Garamond",Garamond,Georgia,serif}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--futura);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.tape{display:inline-block;background:#141210;color:#fff;font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;transform:rotate(-2deg);clip-path:polygon(2% 0,100% 6%,98% 100%,0 94%)}
-.hand{font-family:var(--hand);color:var(--red);font-weight:700;line-height:.9}
-#intro{position:relative;height:420vh}
-#stage{position:sticky;top:0;height:100vh;overflow:hidden;background:#d9cdb8}
-#present{position:absolute;inset:0;transform-origin:50% 52%;will-change:transform}
-#present .wall{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.035) 0 1px,transparent 1px 120px),radial-gradient(ellipse at 50% 120%,#a8361f 0,#7c2416 30%,transparent 31%),linear-gradient(#e2d6c0,#cfc1a8)}
-.clip{position:absolute;background:#f6f1e6;padding:14px 16px;box-shadow:0 8px 24px rgba(0,0,0,.18);font-family:var(--serif);color:#1d1a17;line-height:1.05}
-.clip small{display:block;font:600 9px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#7a6f60;margin-bottom:6px}
-.note{position:absolute;background:#ffe36e;padding:12px 14px;font-family:var(--hand);font-size:24px;line-height:1;box-shadow:0 6px 16px rgba(0,0,0,.18);color:#2a2418}
-.screen{position:absolute;background:#0e1116;border:6px solid #2a2d33;border-radius:6px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.screen canvas{width:100%;height:100%;display:block}
-.flame{position:absolute;width:180px;height:220px;border-radius:50% 50% 40% 40%;background:radial-gradient(ellipse at 50% 85%,#fff3b0 0,#ffb02e 25%,#e2421b 55%,transparent 72%);filter:blur(2px);animation:flick .18s infinite alternate;opacity:.9}
-@keyframes flick{to{transform:scaleY(1.06) skewX(2deg)}}
-.headline{position:absolute;top:4vh;right:5vw;font-size:clamp(46px,7vw,108px);transform:rotate(-4deg);text-align:right}
-.headline span{display:block}
-#window{position:absolute;left:50%;top:52%;width:min(22vw,300px);aspect-ratio:3/4.4;transform:translate(-50%,-50%);border:14px solid #5d7a5a;border-radius:4px;box-shadow:0 0 0 3px #3c5039,0 20px 50px rgba(0,0,0,.4);overflow:hidden;background:linear-gradient(var(--sky1),var(--sky2))}
-#window::before,#window::after{content:"";position:absolute;left:0;right:0;height:10px;background:#5d7a5a;z-index:2}
-#window::before{top:38%}#window::after{top:68%}
-#window .glass{position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.25),transparent 40%)}
-#window .cl{position:absolute;border-radius:50%;background:#fff;filter:blur(6px);opacity:.85}
-#skip{position:absolute;left:50%;bottom:6vh;transform:translateX(-50%) rotate(-2deg);z-index:5;cursor:pointer;border:0}
-#hint{position:absolute;left:50%;bottom:13vh;transform:translateX(-50%);font-family:var(--hand);font-size:30px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.4);z-index:5;transition:opacity .3s;white-space:nowrap}
-#sky{position:absolute;inset:0;background:linear-gradient(var(--sky1),var(--sky2));opacity:0;pointer-events:none}
-#skyText{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;opacity:0;pointer-events:none;padding:0 16px}
-#skyText h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,150px);line-height:.9;letter-spacing:-.02em}
-#skyText p{font-family:var(--hand);font-size:clamp(26px,2.6vw,40px);margin-top:18px}
-.sky{position:relative;background:linear-gradient(var(--sky2) 0,#cfe4f7 40%,var(--paper) 100%);padding:16vh 6vw 10vh;overflow:hidden}
-.cloud{position:absolute;border-radius:50%;background:#fff;filter:blur(18px);opacity:.75;pointer-events:none}
-.me{position:relative;display:grid;grid-template-columns:auto 1fr;gap:6vw;align-items:center;max-width:1200px;margin:0 auto}
-.polaroid{position:relative;background:#fff;padding:14px 14px 56px;width:min(340px,70vw);transform:rotate(-4deg);box-shadow:0 20px 50px rgba(20,30,60,.25)}
-.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;background:#ddd}
-.polaroid .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:var(--hand);font-size:28px;color:#222}
-.polaroid .tp{position:absolute;top:-14px;left:50%;width:110px;height:28px;transform:translateX(-50%) rotate(3deg);background:rgba(240,225,170,.85)}
-.me h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.6vw,92px);line-height:.95;letter-spacing:-.02em;color:#10233f}
-.me h2 em{font-style:italic;color:var(--red)}
-.me p{font-size:19px;line-height:1.55;color:#24364f;max-width:46ch;margin-top:22px}
-.me .hand{font-size:36px;margin-top:22px;transform:rotate(-2deg);display:inline-block}
-.future{position:relative;padding:12vh 6vw 14vh;background:var(--paper)}
-.future .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:8vh;flex-wrap:wrap}
-.future .hd h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,120px);line-height:.9;letter-spacing:-.02em}
-.future .hd .hand{font-size:clamp(28px,3vw,44px);transform:rotate(-3deg)}
-.cards{display:grid;grid-template-columns:repeat(12,1fr);gap:28px 22px}
-.card{position:relative;background:#fbf8f1;padding:26px 26px 30px;box-shadow:0 14px 34px rgba(0,0,0,.12);transition:transform .6s cubic-bezier(.2,.8,.1,1),box-shadow .4s}
-.card:hover{transform:rotate(0) translateY(-6px)!important;box-shadow:0 22px 48px rgba(0,0,0,.18)}
-.card .yr{position:absolute;top:-16px;right:18px}
-.card svg{display:block;width:100%;height:190px;margin-bottom:18px;background:#efe7d8}
-.card h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3vw,46px);line-height:.95}
-.card p{font-size:16px;line-height:1.55;color:#3a342c;margin-top:12px}
-.card .hand{font-size:27px;margin-top:14px;display:block}
-.c1{grid-column:1/8;transform:rotate(-1.2deg)}.c2{grid-column:8/13;transform:rotate(1.5deg);margin-top:8vh}
-.c3{grid-column:2/7;transform:rotate(1deg)}.c4{grid-column:7/13;transform:rotate(-1.4deg);margin-top:4vh}
-.c5{grid-column:1/6;transform:rotate(-.8deg)}.c6{grid-column:6/13;transform:rotate(1.1deg);margin-top:6vh}
-.c7{grid-column:3/11;transform:rotate(-.6deg)}
-.reveal{opacity:0;translate:0 40px;transition:opacity 1s,translate 1s cubic-bezier(.2,.8,.1,1)}
-.reveal.in{opacity:1;translate:0 0}
-.board{background:#141210;color:#f4eee2;padding:14vh 6vw;position:relative;overflow:hidden}
-.board h2{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,100px);line-height:.92;max-width:14ch}
-.board h2 em{font-style:italic;color:#ffd84d}
-.rules{margin-top:8vh;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.rule{border-top:1px solid rgba(244,238,226,.2);padding-top:18px}
-.rule b{font:600 11px var(--mono);letter-spacing:.14em;color:#ffd84d}
-.rule h4{font-family:var(--serif);font-weight:400;font-size:30px;margin:10px 0 8px;line-height:1}
-.rule p{color:#bdb4a5;font-size:15px;line-height:1.5}
-.names{margin-top:10vh;overflow:hidden}
-.mq{display:flex;gap:48px;width:max-content;animation:mq 45s linear infinite}
-.mq span{font-family:var(--serif);font-style:italic;font-size:clamp(34px,4vw,64px);white-space:nowrap}
-.mq i{font-style:normal;color:#ffd84d}
-@keyframes mq{to{transform:translateX(-50%)}}
-.end{position:relative;min-height:90vh;background:linear-gradient(var(--paper),var(--sky2) 60%,var(--sky1));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12vh 16px;overflow:hidden}
-.end h2{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9vw,160px);line-height:.9;color:#0f2340}
-.end h2 em{font-style:italic;color:#fff}
-.end .hand{font-size:clamp(28px,3vw,44px);margin-top:20px;color:#fff;transform:rotate(-2deg)}
-.end .links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:44px}
-.end .links a{font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:13px 18px;background:#fff;color:#0f2340;transition:transform .3s}
-.end .links a:hover{transform:rotate(-2deg) scale(1.05)}
-.end .links a.dark{background:#141210;color:#fff}
-@media (max-width:860px){
-  .me{grid-template-columns:1fr;justify-items:center;text-align:center}
-  .me p{margin-left:auto;margin-right:auto}
-  .cards{grid-template-columns:1fr}
-  .c1,.c2,.c3,.c4,.c5,.c6,.c7{grid-column:auto;margin-top:0}
-  .rules{grid-template-columns:1fr}
-  #window{width:46vw}
-  .headline{font-size:44px}
-  .hide-m{display:none}
+header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:32px 56px}
+header>a{font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+nav{display:flex;gap:30px;font-size:13px}
+nav a:hover{opacity:.6}
+.cover{position:relative;height:100svh;min-height:680px;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.intro{position:absolute;left:100px;top:22vh;z-index:2;max-width:520px}
+.intro h1{font-weight:400;font-size:clamp(64px,8.4vw,128px);line-height:.92;letter-spacing:.035em;text-transform:uppercase}
+.intro p{font-family:var(--gara);font-size:20px;line-height:1.45;margin-top:38px;max-width:300px}
+.intro p a{text-decoration:underline;text-underline-offset:4px}
+.telemetry{position:absolute;left:100px;right:56px;bottom:118px;z-index:2;display:flex;align-items:flex-start;gap:44px}
+.controls{display:flex;gap:10px}
+.controls button{background:none;border:1px solid var(--line);color:var(--fg);font:10px var(--futura);letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:border-color .2s}
+.controls button:hover,.controls button.on{border-color:var(--fg)}
+dl{display:grid;grid-template-columns:repeat(5,minmax(90px,auto));gap:6px 44px}
+dt{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+dd{font-size:12px;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.pos{grid-column:1/-1;display:flex;gap:18px;font-size:10px}
+.pos span{color:var(--dim);letter-spacing:.14em;text-transform:uppercase;font-size:8px;align-self:center}
+.latest{position:absolute;left:56px;right:56px;bottom:0;z-index:2;display:grid;grid-template-columns:200px 1fr 60px;align-items:center;padding:30px 0 34px;border-top:1px solid var(--line)}
+.latest .meta{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);line-height:1.8;padding-left:44px}
+.latest h2{font-family:var(--gara);font-weight:400;font-size:clamp(24px,2.3vw,32px);text-align:center}
+.latest .arrow{justify-self:end;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:18px;transition:border-color .2s}
+.latest a:hover .arrow,.latest .arrow:hover{border-color:var(--fg)}
+.catalogue{background:#0b0b0b;padding:110px 0 90px}
+.wrap{max-width:780px;margin:0 auto;padding:0 36px}
+.catalogue-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:34px}
+.catalogue-top h2{font-weight:400;font-size:26px;letter-spacing:.06em;text-transform:uppercase}
+.catalogue-top a{font-size:11px}
+ol{list-style:none;border-top:1px solid var(--line)}
+ol li a{display:grid;grid-template-columns:50px 1fr auto;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line);transition:padding .3s}
+ol li a:hover{padding-left:10px}
+ol .n,ol time{font-size:9px;letter-spacing:.12em;color:var(--dim)}
+ol h3{font-family:var(--gara);font-weight:400;font-size:24px}
+.closing{margin-top:80px;border-top:1px solid var(--line);padding-top:40px}
+.closing form{display:flex;max-width:420px}
+.closing input{flex:1;background:transparent;border:1px solid var(--line);border-right:0;color:var(--fg);padding:15px 14px;font:13px var(--futura)}
+.closing input::placeholder{color:var(--dim)}
+.closing button{background:var(--fg);color:#000;border:0;padding:0 18px;font:12px var(--futura);cursor:pointer}
+.closing p{font-family:var(--gara);font-size:17px;color:var(--dim);margin-top:14px}
+footer{max-width:780px;margin:0 auto;padding:26px 36px 34px;display:flex;justify-content:space-between;font-size:11px;color:var(--dim);border-top:1px solid var(--line)}
+footer a{margin-left:16px}
+footer a:hover{color:var(--fg)}
+@media(max-width:860px){
+  header{padding:22px}
+  .intro{left:22px;right:22px;top:auto;bottom:300px}
+  .intro h1{font-size:64px}
+  .telemetry{left:22px;right:22px;bottom:120px;flex-direction:column;gap:14px}
+  dl{grid-template-columns:repeat(3,auto);gap:4px 22px}
+  .latest{left:22px;right:22px;grid-template-columns:1fr 50px}
+  .latest .meta{display:none}
+  .latest h2{text-align:left}
+  ol li a{grid-template-columns:36px 1fr}
+  ol time{grid-column:2;margin-top:6px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important}.reveal{opacity:1;translate:0 0}}
 </style>
 </head>
 <body>
-<section id="intro">
-  <div id="stage">
-    <div id="present">
-      <div class="wall"></div>
-      <div class="headline hand"><span>the future is not</span><span>predicted.</span><span>it's built.</span></div>
-      <div class="clip" style="left:4vw;top:8vh;width:220px;transform:rotate(-3deg)"><small>Markets · today</small><span style="font-size:24px">Fear sells. Volatility at record highs again.</span></div>
-      <div class="clip hide-m" style="left:20vw;top:20vh;width:190px;transform:rotate(4deg)"><small>Cities</small><span style="font-size:21px">Two hours a day stuck in traffic.</span></div>
-      <div class="note" style="left:6vw;top:40vh;transform:rotate(-6deg)">too many<br>notifications</div>
-      <div class="screen" style="left:3vw;bottom:10vh;width:300px;height:190px;transform:rotate(2deg)"><canvas id="ticker"></canvas></div>
-      <div class="clip hide-m" style="left:24vw;bottom:8vh;width:220px;transform:rotate(-2deg)"><small>Minds</small><span style="font-size:22px">Anxiety, the defining feeling of the decade.</span></div>
-      <div class="note hide-m" style="right:24vw;top:36vh;transform:rotate(5deg);background:#9fe0c0">who decides<br>what AI learns?</div>
-      <div class="flame hide-m" style="right:8vw;top:30vh"></div>
-      <div class="screen hide-m" style="right:4vw;bottom:12vh;width:260px;height:170px;transform:rotate(-3deg)"><canvas id="noise"></canvas></div>
-      <div class="clip" style="right:22vw;bottom:6vh;width:200px;transform:rotate(3deg)"><small>Today</small><span style="font-size:22px">Everyone scrolls. Few build.</span></div>
-      <div class="note hide-m" style="left:38vw;top:8vh;transform:rotate(-3deg);background:#ffb3c7">no plan<br>= chaos</div>
-      <div id="window" aria-hidden="true"><div class="cl" style="width:120px;height:40px;left:20px;top:30px"></div><div class="cl" style="width:90px;height:30px;right:10px;top:120px"></div><div class="cl" style="width:140px;height:44px;left:-20px;bottom:40px"></div><div class="glass"></div></div>
+<header>
+  <a href="/">André Macouzet</a>
+  <nav><a href="/writing/">Writing</a><a href="/about/">About</a><a href="#subscribe">Subscribe</a></nav>
+</header>
+
+<section class="cover">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="intro">
+    <h1>André<br>Macouzet</h1>
+    <p>Founder of <a href="https://northpointcapital.io/" target="_blank" rel="noopener">Northpoint</a> and <a href="https://studioamr.github.io/" target="_blank" rel="noopener">Studio AMR</a>. Technology, cities, the mind, and the future of civilization.</p>
+  </div>
+  <div class="telemetry">
+    <div class="controls"><button id="pause" type="button">Pause</button></div>
+    <dl>
+      <div><dt>World</dt><dd id="world">Earth</dd></div>
+      <div><dt>Speed · sim</dt><dd id="speed">0 km/s</dd></div>
+      <div><dt>Mean surface</dt><dd id="temp">15 °C</dd></div>
+      <div><dt>Day</dt><dd id="day">24h 0m</dd></div>
+      <div><dt>Year · solar</dt><dd id="year">365 Earth d</dd></div>
+      <div class="pos"><span>Position · sim km</span><b id="pos" style="font-weight:400">X 0.0 · Y 0.0 · Z 0.0</b></div>
+    </dl>
+    <div class="controls" style="margin-left:auto"><button class="w on" data-w="0" type="button">Earth</button><button class="w" data-w="1" type="button">Moon</button><button class="w" data-w="2" type="button">Mars</button></div>
+  </div>
+  <a class="latest" href="/cities-are-technology/">
+    <div class="meta">Latest essay<br>November 12, 2026</div>
+    <h2>Cities Are Technology</h2>
+    <span class="arrow">↗</span>
+  </a>
+</section>
+
+<section class="catalogue">
+  <div class="wrap">
+    <div class="catalogue-top"><h2>Selected writing</h2><a href="/writing/">Full archive ↗</a></div>
+    <ol>
+      <li><a href="/measure-first/"><span class="n">01</span><h3>Measure First, Believe Second</h3><time>2026 / 11</time></a></li>
+      <li><a href="/markets-are-a-mirror/"><span class="n">02</span><h3>Markets Are a Mirror</h3><time>2026 / 11</time></a></li>
+      <li><a href="/thinking-with-machines/"><span class="n">03</span><h3>Thinking With Machines</h3><time>2026 / 11</time></a></li>
+      <li><a href="/the-other-scene/"><span class="n">04</span><h3>The Other Scene</h3><time>2026 / 11</time></a></li>
+      <li><a href="/226-kilometers/"><span class="n">05</span><h3>226 Kilometers</h3><time>2026 / 11</time></a></li>
+    </ol>
+    <div class="closing" id="subscribe">
+      <form onsubmit="event.preventDefault();location.href='mailto:andremacouzetruiz@gmail.com?subject=Subscribe&body='+encodeURIComponent('Please add '+this.e.value+' to your list.')">
+        <input name="e" type="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>New essays on technology, cities and the mind, a few times a year.</p>
     </div>
-    <div id="sky"></div>
-    <div id="skyText"><h1>The future,<br><em>as I see it.</em></h1><p>André Macouzet Ruiz</p></div>
-    <div id="hint">scroll into the window ↓</div>
-    <button id="skip" class="tape" type="button">Skip intro</button>
   </div>
 </section>
 
-<section class="sky" id="me">
-  <div class="cloud" style="width:420px;height:120px;left:-80px;top:8vh"></div>
-  <div class="cloud" style="width:300px;height:90px;right:6vw;top:20vh"></div>
-  <div class="cloud" style="width:520px;height:140px;right:-120px;bottom:6vh"></div>
-  <div class="me">
-    <figure class="polaroid reveal"><span class="tp"></span><img src="img/selfie.jpg" alt="André Macouzet Ruiz" onerror="this.onerror=null;this.src='img/portrait.jpg'"><figcaption class="cap">André, 2026</figcaption></figure>
-    <div class="reveal">
-      <h2>I am building<br>toward a <em>calmer,</em><br>smarter world.</h2>
-      <p>Today feels like a noisy office on fire: too much information, too little thinking, cities designed for cars and minds designed for distraction. I don't think it has to stay that way. These are the futures I believe in, and the ones I am working on.</p>
-      <span class="hand">Morelia, México → everywhere</span>
-    </div>
-  </div>
-</section>
+<footer><span>© 2026 André Macouzet</span><span><a href="/posts.atom">RSS</a><a href="https://northpointcapital.io/" target="_blank" rel="noopener">Northpoint ↗</a><a href="https://studioamr.github.io/" target="_blank" rel="noopener">Studio AMR ↗</a></span></footer>
 
-<section class="future" id="future">
-  <div class="hd reveal"><h2>Postcards<br>from the future.</h2><span class="hand">what I want to see in my lifetime</span></div>
-  <div class="cards">
-    <article class="card c1 reveal"><span class="tape yr">2035</span>
-      <svg viewBox="0 0 400 190"><g transform="translate(200 110)" fill="none" stroke="#141210"><circle r="14"/><circle r="23" opacity=".8"/><circle r="37" opacity=".6"/><circle r="60" opacity=".45"/><circle r="97" opacity=".3"/><g stroke="#c4161c"><line x2="190"/><line x2="-190"/><line y2="-110"/><line x2="134" y2="-110"/><line x2="-134" y2="-110"/></g></g><path d="M0 170 Q100 150 200 168 T400 160 V190 H0Z" fill="#3c7fd0" opacity=".6"/></svg>
-      <h3>Cities built for humans, not cars.</h3>
-      <p>Northpoint Cities starts with Anthropos City on the coast of Azuero: a round plaza, eight avenues in a star, radii that grow by the golden ratio, everything within a fifteen-minute walk. Architecture as a tool for better lives.</p>
-      <span class="hand">anthropos = human being</span></article>
-    <article class="card c2 reveal"><span class="tape yr">2030</span>
-      <svg viewBox="0 0 400 190"><g stroke="#141210" stroke-width="1.5"><line x1="80" y1="60" x2="200" y2="100"/><line x1="200" y1="40" x2="200" y2="100"/><line x1="320" y1="70" x2="200" y2="100"/><line x1="130" y1="140" x2="200" y2="100"/><line x1="270" y1="140" x2="200" y2="100"/></g><g fill="#141210"><circle cx="80" cy="60" r="7"/><circle cx="200" cy="40" r="9" fill="#c4161c"/><circle cx="320" cy="70" r="7"/><circle cx="130" cy="140" r="7"/><circle cx="270" cy="140" r="7"/><circle cx="200" cy="100" r="12"/></g></svg>
-      <h3>Machines that think with us.</h3>
-      <p>AI agents as colleagues, not replacements: they read, test and remember, so people can spend their time on judgment, taste and care.</p>
-      <span class="hand">I build with them every day</span></article>
-    <article class="card c3 reveal"><span class="tape yr">2040</span>
-      <svg viewBox="0 0 400 190"><g fill="none" stroke="#141210"><ellipse cx="200" cy="95" rx="40" ry="28"/><ellipse cx="200" cy="95" rx="70" ry="48" opacity=".7"/><ellipse cx="200" cy="95" rx="100" ry="68" opacity=".5"/><ellipse cx="200" cy="95" rx="140" ry="86" opacity=".3"/></g><circle cx="200" cy="95" r="6" fill="#c4161c"/></svg>
-      <h3>The mind, finally understood.</h3>
-      <p>Psychoanalysis meets neuroscience halfway. We stop treating anxiety as weakness and start reading it as information. Freud asked the right questions; this century answers them.</p></article>
-    <article class="card c4 reveal"><span class="tape yr">2027</span>
-      <svg viewBox="0 0 400 190"><g font-family="IBM Plex Mono" font-size="12" fill="#141210"><text x="20" y="40">SWIM 3.8 KM</text><text x="20" y="95">BIKE 180 KM</text><text x="20" y="150">RUN 42.2 KM</text></g><g stroke="#141210" opacity=".3"><line x1="20" y1="52" x2="380" y2="52"/><line x1="20" y1="107" x2="380" y2="107"/><line x1="20" y1="162" x2="380" y2="162"/></g><g fill="#c4161c"><circle cx="300" cy="52" r="6"/><circle cx="210" cy="107" r="6"/><circle cx="120" cy="162" r="6"/></g></svg>
-      <h3>Bodies that go further.</h3>
-      <p>My own near future: an Ironman. 226 kilometers in a day. Proof that the limit is usually a story in your head, and that stories can be rewritten.</p>
-      <span class="hand">start line, 2027</span></article>
-    <article class="card c5 reveal"><span class="tape yr">2032</span>
-      <svg viewBox="0 0 400 190"><g id="cd"></g></svg>
-      <h3>Markets without fear.</h3>
-      <p>Trading as a discipline of rules and self-knowledge, not adrenaline. Northpoint exists to make better traders and better decisions.</p></article>
-    <article class="card c6 reveal"><span class="tape yr">2050</span>
-      <svg viewBox="0 0 400 190" id="waves"></svg>
-      <h3>Reality, stranger than we thought.</h3>
-      <p>Quantum computers, entanglement, the observer problem. The deepest layer of the world behaves nothing like the surface, and the next breakthroughs will come from people willing to accept that.</p>
-      <span class="hand">the most beautiful fact I know</span></article>
-    <article class="card c7 reveal"><span class="tape yr">always</span>
-      <svg viewBox="0 0 400 190"><path d="M60 120 Q200 -10 340 70" fill="none" stroke="#c4161c" stroke-dasharray="5 7" stroke-width="2"/><g font-family="IBM Plex Mono" font-size="12" fill="#141210"><text x="300" y="98">LYON</text><text x="30" y="148">MORELIA</text></g><circle cx="340" cy="70" r="5" fill="#141210"/><circle cx="60" cy="120" r="5" fill="#141210"/></svg>
-      <h3>Leave it better built than you found it.</h3>
-      <p>In 1826 Jean-François Macouzet crossed the ocean from Lyon and helped found institutional medicine in Michoacán. Two centuries later I want to do the same with cities, software and minds: build something that outlasts me.</p></article>
-  </div>
-</section>
-
-<section class="board">
-  <h2 class="reveal">How I think<br>about <em>everything.</em></h2>
-  <div class="rules">
-    <div class="rule reveal"><b>01</b><h4>The map is not the territory.</h4><p>Every model is a simplification. Test it against reality, rewrite it when reality wins.</p></div>
-    <div class="rule reveal"><b>02</b><h4>Measure first, believe second.</h4><p>An uncomfortable number beats a beautiful story.</p></div>
-    <div class="rule reveal"><b>03</b><h4>Everything flows.</h4><p>Markets, cities and people are processes, not things. Design for change.</p></div>
-    <div class="rule reveal"><b>04</b><h4>Discipline is freedom.</h4><p>You control your response, not the event. A written rule is a promise to your future self.</p></div>
-    <div class="rule reveal"><b>05</b><h4>We are not that rational.</h4><p>Most of what moves us happens below awareness. Know it, and you can work with it.</p></div>
-    <div class="rule reveal"><b>06</b><h4>Places shape people.</h4><p>We build our cities, and then our cities build us.</p></div>
-  </div>
-  <div class="names"><div class="mq" id="mq"></div></div>
-</section>
-
-<section class="end">
-  <div class="cloud" style="width:460px;height:130px;left:-60px;bottom:20vh"></div>
-  <div class="cloud" style="width:380px;height:110px;right:-40px;bottom:8vh"></div>
-  <h2 class="reveal">See you in<br><em>the future.</em></h2>
-  <span class="hand reveal">let's build it together</span>
-  <div class="links reveal">
-    <a class="dark" href="mailto:andremacouzetruiz@gmail.com">Write to me</a>
-    <a href="https://www.linkedin.com/in/andremacouzet" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://northpointcapital.io/" target="_blank" rel="noopener">Northpoint</a>
-    <a href="https://studioamr.github.io/" target="_blank" rel="noopener">Studio AMR</a>
-  </div>
-</section>
-
-<script>
-const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const T=['Heraclitus','Marcus Aurelius','Sigmund Freud','Jacques Lacan','Carl Jung','Richard Feynman','Erwin Schrödinger','Daniel Kahneman','Nassim Taleb','Jane Jacobs','Friedrich Nietzsche','Fyodor Dostoevsky'];
-const mh=T.map(n=>`<span>${n} <i>✦</i></span>`).join('');document.getElementById('mq').innerHTML=mh+mh;
-(()=>{let p=110,g='';for(let i=0;i<24;i++){const o=p,c=o+(Math.sin(i*1.3)*14+(i>12?-6:4));const x=20+i*15.5;g+=`<line x1="${x+4}" y1="${Math.min(o,c)-8}" x2="${x+4}" y2="${Math.max(o,c)+8}" stroke="#141210"/><rect x="${x}" y="${Math.min(o,c)}" width="8" height="${Math.abs(c-o)+1}" fill="${c<o?'#c4161c':'#141210'}"/>`;p=c}document.getElementById('cd').innerHTML=g})();
-(()=>{let g='';for(let y=8;y<186;y+=8)for(let x=8;x<396;x+=8){const d1=Math.hypot(x-20,y-60),d2=Math.hypot(x-20,y-130),v=(Math.cos(d1*.09)+Math.cos(d2*.09))/2;if(v>.2)g+=`<circle cx="${x}" cy="${y}" r="${(v*2.4).toFixed(1)}" fill="${v>.8?'#c4161c':'#141210'}"/>`}document.getElementById('waves').innerHTML=g})();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-function screenAnim(id,fn){const c=document.getElementById(id);if(!c)return;const x=c.getContext('2d');c.width=c.clientWidth||300;c.height=c.clientHeight||190;let t=0;(function f(){t++;fn(x,c.width,c.height,t);if(!still)requestAnimationFrame(f)})()}
-screenAnim('ticker',(x,w,h,t)=>{x.fillStyle='#0e1116';x.fillRect(0,0,w,h);x.strokeStyle='#ff4d4d';x.beginPath();for(let i=0;i<w;i+=3){const y=h/2+Math.sin((i+t*2)*.05)*20+Math.sin((i+t)*.21)*12;i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke();x.fillStyle='#ff4d4d';x.font='11px IBM Plex Mono';x.fillText('NQ  -2.84%  ▼',10,18)});
-screenAnim('noise',(x,w,h)=>{const d=x.createImageData(w,h);for(let i=0;i<d.data.length;i+=4){const v=Math.random()*90;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}x.putImageData(d,0,0)});
-const intro=document.getElementById('intro'),present=document.getElementById('present'),sky=document.getElementById('sky'),skyText=document.getElementById('skyText'),hint=document.getElementById('hint');
-function zoom(){
-  const total=intro.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,scrollY/total));
-  present.style.transform=`scale(${Math.pow(1+p*1.6,3.6)})`;
-  sky.style.opacity=Math.min(1,Math.max(0,(p-.55)/.2));
-  const tp=Math.min(1,Math.max(0,(p-.7)/.2));
-  skyText.style.opacity=tp;skyText.style.transform=`translateY(${(1-tp)*30}px)`;
-  hint.style.opacity=p>.05?0:1;
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const cv=document.getElementById('gl');
+const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
+const S=new THREE.Scene();const C=new THREE.PerspectiveCamera(40,1,.1,200);C.position.set(0,0,18);
+const ink=0xe9e5dc;
+const WORLDS=[
+ {name:'Earth',temp:'15 °C',day:'23h 56m',year:'365 Earth d',r:2.1,v:29.8},
+ {name:'Moon',temp:'−20 °C',day:'27d 7h',year:'27.3 Earth d',r:1.2,v:1.0},
+ {name:'Mars',temp:'−65 °C',day:'24h 37m',year:'687 Earth d',r:1.6,v:24.1}];
+// planet: wireframe lat/long sphere + faint shaded core
+const planet=new THREE.Group();S.add(planet);
+function buildPlanet(r){
+  planet.clear();
+  const core=new THREE.Mesh(new THREE.SphereGeometry(r*.995,48,48),new THREE.MeshBasicMaterial({color:0x000000}));planet.add(core);
+  const m=new THREE.LineBasicMaterial({color:ink,transparent:true,opacity:.55});
+  for(let i=1;i<12;i++){const lat=-Math.PI/2+i*Math.PI/12,y=Math.sin(lat)*r,rr=Math.cos(lat)*r,pts=[];for(let k=0;k<=96;k++){const a=k/96*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(a)*rr,y,Math.sin(a)*rr))}planet.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),m))}
+  for(let j=0;j<16;j++){const a=j/16*Math.PI*2,pts=[];for(let k=0;k<=64;k++){const lat=-Math.PI/2+k/64*Math.PI;pts.push(new THREE.Vector3(Math.cos(lat)*Math.cos(a)*r,Math.sin(lat)*r,Math.cos(lat)*Math.sin(a)*r))}planet.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),m))}
+  const halo=new THREE.Mesh(new THREE.SphereGeometry(r*1.05,48,48),new THREE.MeshBasicMaterial({color:ink,transparent:true,opacity:.04,side:THREE.BackSide}));planet.add(halo);
 }
-addEventListener('scroll',zoom,{passive:true});addEventListener('resize',zoom);zoom();
-document.getElementById('skip').onclick=()=>document.getElementById('me').scrollIntoView({behavior:'smooth'});
-const clouds=[...document.querySelectorAll('.cloud')];
-addEventListener('pointermove',e=>{const mx=e.clientX/innerWidth-.5;clouds.forEach((c,i)=>c.style.translate=`${mx*(20+i*12)}px 0`)});
+planet.position.set(4.6,3.2,0);
+// ship: lathe hull + swept wings, drawn as wireframe over black
+const ship=new THREE.Group();S.add(ship);
+const fill=new THREE.MeshBasicMaterial({color:0x050505});
+const wire=new THREE.LineBasicMaterial({color:ink,transparent:true,opacity:.75});
+function wf(geo){const g=new THREE.Group();g.add(new THREE.Mesh(geo,fill));g.add(new THREE.LineSegments(new THREE.WireframeGeometry(geo),wire));return g}
+const prof=[[0,.55],[.5,.52],[.9,.38],[1.2,.18],[1.3,0],[1.2,-.12],[.8,-.22],[0,-.26]].map(([x,y])=>new THREE.Vector2(x,y));
+const hull=wf(new THREE.LatheGeometry(prof,24));ship.add(hull);
+const wingShape=new THREE.Shape();wingShape.moveTo(.6,0);wingShape.lineTo(4.3,-.15);wingShape.lineTo(4.4,0);wingShape.lineTo(1.1,.5);wingShape.lineTo(.6,.3);
+const wingGeo=new THREE.ExtrudeGeometry(wingShape,{depth:.08,bevelEnabled:false});
+const wL=wf(wingGeo);wL.rotation.x=-Math.PI/2;wL.position.set(0,0,.04);ship.add(wL);
+const wR=wf(wingGeo);wR.rotation.x=-Math.PI/2;wR.scale.x=-1;wR.position.set(0,0,.04);ship.add(wR);
+const glow=new THREE.MeshBasicMaterial({color:0x9fd2ff});
+[-.75,.75].forEach(x=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.12,16,16),glow);e.position.set(x,-.18,.9);ship.add(e)});
+ship.position.set(4.6,-1.4,2);ship.rotation.x=.18;ship.scale.setScalar(.9);
+// stars
+const sg=new THREE.BufferGeometry(),sp=[];for(let i=0;i<900;i++)sp.push((Math.random()-.5)*120,(Math.random()-.5)*70,-20-Math.random()*40);
+sg.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));S.add(new THREE.Points(sg,new THREE.PointsMaterial({color:ink,size:.08,transparent:true,opacity:.6})));
+function size(){const w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();const m=w<860;planet.position.set(m?1.6:4.6,m?5:3.2,0);ship.position.x=m?0:4.6;ship.position.y=m?2.2:-1.4}
+addEventListener('resize',size);
+let wi=0,paused=false,t=0,mx=0,my=0;
+const $=id=>document.getElementById(id);
+function setWorld(i){wi=i;const w=WORLDS[i];buildPlanet(w.r);$('world').textContent=w.name;$('temp').textContent=w.temp;$('day').textContent=w.day;$('year').textContent=w.year;document.querySelectorAll('.w').forEach(b=>b.classList.toggle('on',+b.dataset.w===i))}
+document.querySelectorAll('.w').forEach(b=>b.onclick=()=>setWorld(+b.dataset.w));
+$('pause').onclick=()=>{paused=!paused;$('pause').textContent=paused?'Play':'Pause'};
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+setWorld(0);size();
+let last=performance.now();
+(function f(now){const dt=(now-last)/1000;last=now;if(!paused)t+=dt;
+  planet.rotation.y=t*.18;planet.rotation.z=.4;
+  ship.position.y+=( (innerWidth<860?2.2:-1.4)+Math.sin(t*1.2)*.18-ship.position.y)*.05;
+  ship.rotation.z=Math.sin(t*.9)*.05+mx*-.25;ship.rotation.x=.18+my*.2;ship.rotation.y=mx*.3;
+  C.position.x+=(mx*1.2-C.position.x)*.03;C.position.y+=(-my*.8-C.position.y)*.03;C.lookAt(2,0,0);
+  if(!paused){const w=WORLDS[wi],v=w.v*(1+Math.sin(t*.7)*.04);$('speed').textContent=v.toLocaleString('en-US',{maximumFractionDigits:1,minimumFractionDigits:1})+' km/s';
+    $('pos').textContent=`X ${(Math.sin(t*.1)*120).toFixed(1)} · Y ${(3600+Math.cos(t*.13)*80).toFixed(1)} · Z ${(59000+t*v*.02).toFixed(1)}`}
+  R.render(S,C);requestAnimationFrame(f)})(last);
 </script>
 </body>
 </html>
