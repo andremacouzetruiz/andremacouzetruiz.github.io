@@ -87,6 +87,16 @@ figure{width:300px;flex:none}
 figure img{width:300px;height:390px;object-fit:cover;filter:grayscale(1) contrast(1.08);transition:filter .5s}
 figure:hover img{filter:grayscale(0)}
 figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:12px}
+/* work */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.w{background:var(--bg);display:flex;flex-direction:column}
+.shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#111;border-bottom:1px solid var(--line)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(.35);transition:filter .5s,transform .6s}
+.w:hover .shot img{filter:none;transform:scale(1.04)}
+.wm{padding:20px 22px 24px;display:grid;gap:6px}
+.wm h3{font-family:var(--disp);font-weight:400;font-size:36px;text-transform:uppercase;color:#fff;line-height:1}
+.w .go{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.w:hover .go{color:var(--warm)}
 /* about */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .about h2{font-size:clamp(48px,6.4vw,110px);color:#fff}
@@ -122,8 +132,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;paddin
   .v .go{justify-self:start}
   .about{grid-template-columns:1fr;gap:30px}
   .learn{grid-template-columns:1fr 1fr}
-  figure,figure img{width:220px}
-  figure img{height:290px}
+  .work{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.hero h1 span i{transform:none}.hero .row{opacity:1}.reveal{opacity:1;transform:none}}
 </style>
@@ -133,7 +142,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;paddin
 
 <nav>
   <a class="mark" href="#top"><svg><use href="#s"/></svg>André Macouzet</a>
-  <div class="links"><a href="#numbers">Numbers</a><a href="#build">Build</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  <div class="links"><a href="#numbers">Numbers</a><a href="#build">Build</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </nav>
 
 <header class="hero" id="top">
@@ -141,10 +150,10 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;paddin
   <canvas id="beams" aria-hidden="true"></canvas>
   <div class="shade"></div>
   <div class="copy">
-    <div class="mono" style="color:#cfc7ba;margin-bottom:18px">Data scientist · Builder · Futures trader</div>
+    <div class="mono" style="color:#cfc7ba;margin-bottom:18px">Software developer · Data scientist</div>
     <h1 class="disp"><span><i>André</i></span><span><i>Macouzet</i></span></h1>
     <div class="row">
-      <p>From a vending machine at twelve to trading Nasdaq futures and shipping software. Every product I make starts with one question: what does the data actually say?</p>
+      <p>I design and build software: platforms, apps, landing pages and trading systems. 26 of them are live right now, and you can open every one below.</p>
       <span class="mono">Morelia, México</span>
     </div>
   </div>
@@ -158,7 +167,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;paddin
     <div class="moment"><b>$11,477</b><h3>Trading payouts</h3><p>USD withdrawn trading Nasdaq futures on prop-firm capital.</p></div>
     <div class="moment"><b>13 yrs</b><h3>Of 1-minute data</h3><p>Backtested to find out if my own strategy had an edge. It did not. I changed it.</p></div>
     <div class="moment"><b>15</b><h3>Data science projects</h3><p>TripleTen certificate: ML, time series, NLP and computer vision.</p></div>
-    <div class="moment"><b>12</b><h3>First business</h3><p>A vending machine, paid for with my own savings.</p></div>
+    <div class="moment"><b>4</b><h3>Kinds of software</h3><p>Platforms, apps, landing pages and trading bots.</p></div>
   </div>
 </section>
 
@@ -182,17 +191,18 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;paddin
 
 <div class="quote reveal"><h2 class="disp">Measure first.<br><em>Believe second.</em></h2></div>
 
-<section class="gallery" aria-label="Photos">
-  <div class="track" id="track"></div>
+<section id="work">
+  <div class="label reveal"><span class="mono">Selected work · live</span><span class="mono">03</span></div>
+  <div class="work reveal" id="workgrid"></div>
 </section>
 
 <section id="about">
   <div class="about">
-    <h2 class="disp reveal">Not just<br>the trade.</h2>
+    <h2 class="disp reveal">Built,<br>not pitched.</h2>
     <div class="txt reveal">
       <p>I built the backtest that proved my own strategy lost money. Then I changed the strategy.</p>
-      <p>That is how I work in everything: trading, software, business. A model on a laptop changes nothing, so I take ideas all the way to a deployed product, and then I measure whether they worked.</p>
-      <p>Before code I ran retail and distribution in Mexico City, closing deals with national chains. Now I build Northpoint, run Studio AMR, and trade.</p>
+      <p>That is how I build software. A model on a laptop changes nothing, so I take ideas all the way to a deployed product, and then I measure whether they worked.</p>
+      <p>Today I build Northpoint, run Studio AMR, where clients hire me for their landing pages and apps, and write the trading systems I use myself.</p>
     </div>
   </div>
   <div class="learn reveal">
@@ -216,10 +226,11 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;paddin
 <footer><span class="mono">© 2026 André Macouzet Ruiz</span><span class="mono">Not financial advice</span></footer>
 
 <script>
-// gallery
-const G=[["g-night.jpg","Night session, NY open"],["g-portrait.jpg","Morelia, 2026"],["g-plan.jpg","Writing the plan"],["g-studio.jpg","At the studio"],["g-look.jpg","Off the charts"],["g-side.jpg","Between sessions"]];
-const html=G.map(([f,c])=>`<figure><img src="img/${f}" alt="${c}" loading="lazy" width="300" height="390"><figcaption>${c}</figcaption></figure>`).join('');
-document.getElementById('track').innerHTML=html+html;
+// live work
+const SHOT={"https://northpointcapital.io/": "northpoint", "https://northpointcapital.io/trading/": "journal", "https://studioamr.github.io/agrofin/": "abono", "https://studioamr.github.io/lunes/": "lunes", "https://studioamr.github.io/parfect/": "parfect", "https://studioamr.github.io/firmline/": "firmline"};
+const W=[["Northpoint","Platform","https://northpointcapital.io/"],["NP Journal","Web app","https://northpointcapital.io/trading/"],["ABONO","Client app","https://studioamr.github.io/agrofin/"],["LUNES","Client landing","https://studioamr.github.io/lunes/"],["PARFECT","Web app","https://studioamr.github.io/parfect/"],["FIRMLINE","Landing page","https://studioamr.github.io/firmline/"]];
+document.getElementById('workgrid').innerHTML=W.map(([n,k,u])=>`<a class="w" href="${u}" target="_blank" rel="noopener"><div class="shot"><img src="work/${SHOT[u]}.jpg" alt="${n}" loading="lazy" width="1200" height="750"></div><div class="wm"><span class="mono">${k}</span><h3>${n}</h3><span class="go">Open live →</span></div></a>`).join('');
+
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
